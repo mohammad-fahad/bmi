@@ -1,0 +1,28 @@
+body{
+    background-color:  lightgrey;
+    font-family: 'Poppins', sans-serif;
+    padding: 4%;
+    margin: 4%;
+}
+legend{
+    text-align: center;
+    
+}
+h1, h3, p{
+    text-align: center;
+}
+.result{
+    border: 5px;
+   
+}
+li{
+    text-align: center;
+    list-style: none;
+    display: none;
+    color:green;
+}
+.container{    
+    padding: 2%; 
+    border-radius: 20px;
+    box-shadow: 7px 7px 20px white ;
+}

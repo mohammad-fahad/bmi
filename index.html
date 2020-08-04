@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculate you Body Weigh and Mass Index</h1>
+        <p>Please input you information to the folloverWeighting fields and click submit to get the calculated result.
+        </p>
+        <legend>BMI Calculator</legend>
+        <label for="weight">Weight</label>
+        <input type="text" placeholder="Input your weight in KG" id="weight" class="form-control"> <br> <br>
+        <label for="height">Height</label>
+        <input type="text" name="" id="height" placeholder="Input your height in feet and inch eg. 5.10"
+            class="form-control">
+        <br><br>
+        <label for="gender">Gender</label> <br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <button id="submit" class="btn btn-success" onclick="calculate()">Submit</button>
+        <br> <br>
+
+        <div class="result">
+            <h3>
+                Your BMI is <span id="bmi">0</span>
+            </h3>
+            <div class="info">
+                <ul>
+                    <li id="underWeight">Underweight: BMI is less than 18.5, take good care of yourself</li>
+                    <li id="normal">Normal weight: BMI is 18.5 to 24.9, you are in a good shape</li>
+                    <li id="overWeight">Overweight: BMI is 25 to 29.9, need to start working out a little</li>
+                    <li id="obesity">Obesity: BMI is 30 or more, make a heathy diet plan and start working out</li>
+                </ul>
+            </div>
+        </div> <br> <br>
+
+    </div>
+    <script>
+        function calculate() {
+            const weight = document.getElementById('weight').value;
+            const height = (document.getElementById('height').value) * 0.3048;
+            const count = weight / height;
+            const convert = count / height;
+            const bmi = parseFloat(document.getElementById('bmi').innerText);
+            let result = (convert + bmi).toFixed(2);
+            document.getElementById('bmi').innerText = result;
+            if (result < 18.5) {
+                document.getElementById('underWeight').style.display = 'block';
+                document.getElementById('normal').style.display = 'none';
+                document.getElementById('overWeight').style.display = 'none';
+                document.getElementById('obesity').style.display = 'none';
+            } else if (result > 18.5 && result <= 24.9) {
+                document.getElementById('underWeight').style.display = 'none';
+                document.getElementById('normal').style.display = 'block';
+                document.getElementById('overWeight').style.display = 'none';
+                document.getElementById('obesity').style.display = 'none';
+            }
+            else if (result >= 25 && result <= 29.9) {
+                document.getElementById('underWeight').style.display = 'none';
+                document.getElementById('normal').style.display = 'none';
+                document.getElementById('overWeight').style.display = 'block';
+                document.getElementById('obesity').style.display = 'none';
+            } else {
+                document.getElementById('underWeight').style.display = 'none';
+                document.getElementById('normal').style.display = 'none';
+                document.getElementById('overWeight').style.display = 'none';
+                document.getElementById('obesity').style.display = 'block';
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
