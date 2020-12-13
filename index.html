@@ -13,17 +13,17 @@
 
 <body>
     <div class="container">
-        <h1>Calculate you Body Weigh and Mass Index</h1>
-        <p>Please input you information to the folloverWeighting fields and click submit to get the calculated result.
+        <h1><strong>Calculate you Body Weight and Mass Index</strong></h1>
+        <p>Please input you information to the following fields and click submit to get the calculated result.
         </p>
         <legend>BMI Calculator</legend>
-        <label for="weight">Weight</label>
+        <label for="weight"><strong>Weight</strong></label>
         <input type="text" placeholder="Input your weight in KG" id="weight" class="form-control"> <br> <br>
-        <label for="height">Height</label>
+        <label for="height"><strong>Height</strong></label>
         <input type="text" name="" id="height" placeholder="Input your height in feet and inch eg. 5.10"
             class="form-control">
         <br><br>
-        <label for="gender">Gender</label> <br>
+        <label for="gender"><strong>Gender</strong></label> <br>
         <input type="radio" id="male" name="gender" value="male">
         <label for="male">Male</label><br>
         <input type="radio" id="female" name="gender" value="female">
@@ -56,6 +56,9 @@
             const bmi = parseFloat(document.getElementById('bmi').innerText);
             let result = (convert + bmi).toFixed(1);
             document.getElementById('bmi').innerText = result;
+            if (document.getElementById('weight').value != Number || document.getElementById('height').value != Number) {
+                alert('Please input a valid number')
+            }
             if (result < 18.5) {
                 document.getElementById('underWeight').style.display = 'block';
                 document.getElementById('normal').style.display = 'none';
@@ -78,6 +81,7 @@
                 document.getElementById('overWeight').style.display = 'none';
                 document.getElementById('obesity').style.display = 'block';
             }
+            
             
             document.getElementById('weight').value = '';
 document.getElementById('height').value = '';

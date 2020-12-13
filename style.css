@@ -1,5 +1,5 @@
 body{
-    background-color:  lightgrey;
+    background-color:  skyblue;
     font-family: 'Poppins', sans-serif;
     padding: 4%;
     margin: 4%;
@@ -24,5 +24,6 @@ li{
 .container{    
     padding: 2%; 
     border-radius: 20px;
-    box-shadow: 7px 7px 20px white ;
+    box-shadow: 7px 7px 40px grey ;
+    background-color: whitesmoke;
 }
