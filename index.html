@@ -29,6 +29,7 @@
         <input type="radio" id="female" name="gender" value="female">
         <label for="female">Female</label><br>
         <button id="submit" class="btn btn-success" onclick="calculate()">Submit</button>
+        <button class="btn btn-danger" onclick="location.reload()">Reset</button>
         <br> <br>
 
         <div class="result">
@@ -47,13 +48,13 @@
 
     </div>
     <script>
-        function calculate() {
+        function calculate() {           
             const weight = document.getElementById('weight').value;
             const height = (document.getElementById('height').value) * 0.3048;
             const count = weight / height;
             const convert = count / height;
             const bmi = parseFloat(document.getElementById('bmi').innerText);
-            let result = (convert + bmi).toFixed(2);
+            let result = (convert + bmi).toFixed(1);
             document.getElementById('bmi').innerText = result;
             if (result < 18.5) {
                 document.getElementById('underWeight').style.display = 'block';
@@ -77,6 +78,10 @@
                 document.getElementById('overWeight').style.display = 'none';
                 document.getElementById('obesity').style.display = 'block';
             }
+            
+            document.getElementById('weight').value = '';
+document.getElementById('height').value = '';
+            
 
         }
 
