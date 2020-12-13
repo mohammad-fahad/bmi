@@ -56,9 +56,9 @@
             const bmi = parseFloat(document.getElementById('bmi').innerText);
             let result = (convert + bmi).toFixed(1);
             document.getElementById('bmi').innerText = result;
-            if (document.getElementById('weight').value != Number || document.getElementById('height').value != Number) {
-                alert('Please input a valid number')
-            }
+            // if (document.getElementById('weight').value != Number || document.getElementById('height').value != Number) {
+            //     alert('Please input a valid number')
+            // }
             if (result < 18.5) {
                 document.getElementById('underWeight').style.display = 'block';
                 document.getElementById('normal').style.display = 'none';
