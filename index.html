@@ -18,9 +18,9 @@
         </p>
         <legend>BMI Calculator</legend>
         <label for="weight"><strong>Weight</strong></label>
-        <input type="text" placeholder="Input your weight in KG" id="weight" class="form-control"> <br> <br>
+        <input type="number" min='1' placeholder="Input your weight in KG" id="weight" class="form-control"> <br> <br>
         <label for="height"><strong>Height</strong></label>
-        <input type="text" name="" id="height" placeholder="Input your height in feet and inch eg. 5.10"
+        <input type="number" min='1' name="" id="height" placeholder="Input your height in feet and inch eg. 5.10"
             class="form-control">
         <br><br>
         <label for="gender"><strong>Gender</strong></label> <br>
@@ -47,49 +47,9 @@
         </div> <br> <br>
 
     </div>
-    <script>
-        function calculate() {           
-            const weight = document.getElementById('weight').value;
-            const height = (document.getElementById('height').value) * 0.3048;
-            const count = weight / height;
-            const convert = count / height;
-            const bmi = parseFloat(document.getElementById('bmi').innerText);
-            let result = (convert + bmi).toFixed(1);
-            document.getElementById('bmi').innerText = result;
-            // if (document.getElementById('weight').value != Number || document.getElementById('height').value != Number) {
-            //     alert('Please input a valid number')
-            // }
-            if (result < 18.5) {
-                document.getElementById('underWeight').style.display = 'block';
-                document.getElementById('normal').style.display = 'none';
-                document.getElementById('overWeight').style.display = 'none';
-                document.getElementById('obesity').style.display = 'none';
-            } else if (result > 18.5 && result <= 24.9) {
-                document.getElementById('underWeight').style.display = 'none';
-                document.getElementById('normal').style.display = 'block';
-                document.getElementById('overWeight').style.display = 'none';
-                document.getElementById('obesity').style.display = 'none';
-            }
-            else if (result >= 25 && result <= 29.9) {
-                document.getElementById('underWeight').style.display = 'none';
-                document.getElementById('normal').style.display = 'none';
-                document.getElementById('overWeight').style.display = 'block';
-                document.getElementById('obesity').style.display = 'none';
-            } else {
-                document.getElementById('underWeight').style.display = 'none';
-                document.getElementById('normal').style.display = 'none';
-                document.getElementById('overWeight').style.display = 'none';
-                document.getElementById('obesity').style.display = 'block';
-            }
-            
-            
-            document.getElementById('weight').value = '';
-document.getElementById('height').value = '';
-            
+<script src="./script.js"></script>
 
-        }
 
-    </script>
 
 </body>
 
